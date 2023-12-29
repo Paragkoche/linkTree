@@ -14,7 +14,7 @@ const links = [
   },
   {
     title: "Webstack | Facebook",
-    link: "https://www.facebook.com/profile.php?id=61552628662073&sk=about",
+    link: "https://www.facebook.com/profile.php?id=61552628662073",
     icon: FaFacebook,
   },
   {
