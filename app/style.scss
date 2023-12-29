@@ -1,0 +1,248 @@
+@use "@/app/scss/variables" as *;
+
+#home-main {
+  max-width: 100vw;
+  height: 100dvh;
+  padding: 100px 4vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .bg-container {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    opacity: 0.1;
+
+    img {
+      object-fit: cover;
+    }
+  }
+
+  .home-container {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+    width: 100%;
+
+    .heading-container {
+      display: flex;
+      align-items: flex-end;
+      gap: 10px;
+      color: $blue;
+
+      svg {
+        width: 220px;
+      }
+
+      .cls-1 {
+        fill: #fff;
+      }
+
+      .cls-2 {
+        fill: #36f;
+      }
+    }
+
+    .links-container {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      width: 100%;
+      backdrop-filter: blur(20px);
+      box-shadow: 0 0.75rem 2rem 0 rgba(0, 0, 0, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.125);
+      border-radius: 10px;
+      padding: 20px;
+    }
+  }
+
+  .info {
+    position: absolute;
+    bottom: 6vh;
+    z-index: 2;
+    color: $light;
+    font-size: 0.9rem;
+
+    span {
+      color: $blue;
+      font-weight: bold;
+    }
+  }
+}
+
+//*---------->> Tablet
+
+@media screen and (min-width: 820px) {
+  #home-main {
+    padding: 100px 20vw;
+  }
+}
+
+//*---------->> desktop
+
+@media screen and (min-width: 1025px) {
+  #home-main {
+    padding: 100px 30vw;
+  }
+}
+
+//*------------------>
+//*--------------------->
+//*------------------------> Button
+//*--------------------->
+//*------------------>
+
+#defaultButton {
+  $size: 40px;
+  $svg: 15px;
+  display: flex;
+  cursor: pointer;
+
+  .arrow {
+    width: $size;
+    height: $size;
+    background-color: $pink;
+    border-radius: $borderS;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+    transition: all 100ms $easing;
+
+    svg {
+      width: $svg;
+      height: $svg;
+      transition: all 100ms 100ms $easing;
+      color: $offDark;
+    }
+  }
+
+  .arrow-hover {
+    width: 0px;
+    opacity: 0;
+
+    svg {
+      transform: translate(-50px, 50px);
+    }
+  }
+
+  .title {
+    width: calc(100% - $svg - $svg);
+    background-color: $blue;
+    border-radius: $borderS;
+    display: flex;
+    align-items: center;
+    height: $size;
+    padding: 0 20px;
+    color: $light;
+    font-size: 1rem;
+  }
+
+  &:hover {
+    .arrow {
+      width: 0px;
+      opacity: 0;
+      transition: all 200ms $easing;
+
+      svg {
+        transform: translate(-50px, 50px);
+        transition: all 100ms 100ms $easing;
+      }
+    }
+
+    .arrow-hover {
+      width: $size;
+      opacity: 1;
+
+      svg {
+        transform: translate(0px, 0px);
+      }
+    }
+  }
+}
+
+//*---------->> Tablet
+
+@media screen and (min-width: 820px) {
+  #defaultButton {
+    $size: 40px;
+    $svg: 15px;
+
+    .arrow {
+      width: $size;
+      height: $size;
+      border-radius: $borderS;
+
+      svg {
+        width: $svg;
+        height: $svg;
+      }
+    }
+
+    .title {
+      padding: 0 30px;
+      height: $size;
+      border-radius: $borderS;
+      font-size: 1rem;
+    }
+
+    .arrow-hover {
+      width: 0px;
+
+      svg {
+        transform: translate(-50px, 50px);
+      }
+    }
+
+    &:hover {
+      .arrow-hover {
+        width: $size;
+      }
+    }
+  }
+}
+
+//*---------->> desktop
+
+@media screen and (min-width: 1025px) {
+  #defaultButton {
+    $size: 50px;
+    $svg: 15px;
+
+    .arrow {
+      width: $size;
+      height: $size;
+      border-radius: $borderM;
+
+      svg {
+        width: $svg;
+        height: $svg;
+      }
+    }
+
+    .title {
+      padding: 0 40px;
+      height: $size;
+      border-radius: $borderM;
+      font-size: 1.2rem;
+    }
+
+    .arrow-hover {
+      width: 0px;
+
+      svg {
+        transform: translate(-50px, 50px);
+      }
+    }
+
+    &:hover {
+      .arrow-hover {
+        width: $size;
+      }
+    }
+  }
+}
